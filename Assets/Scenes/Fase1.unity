@@ -1242,13 +1242,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.50042874, y: 0.4859432, z: -0.5822131, w: -0.41768202}
-  m_LocalPosition: {x: -1.95, y: 32.81, z: 2.78}
+  m_LocalRotation: {x: -0.163478, y: 0.83623195, z: -0.38197494, w: -0.35789138}
+  m_LocalPosition: {x: 42.64, y: 42.32, z: 15.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -259.7, y: -98.64, z: 0}
+  m_LocalEulerAnglesHint: {x: -310.9, y: -133.66, z: 0}
 --- !u!1001 &729985543
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1445,7 +1445,6 @@ MonoBehaviour:
   mascaraChao:
     serializedVersion: 2
     m_Bits: 64
-  textoGameOver: {fileID: 0}
   vivo: 1
 --- !u!1001 &789763395
 PrefabInstance:

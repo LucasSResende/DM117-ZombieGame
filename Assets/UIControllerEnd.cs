@@ -11,5 +11,4 @@ public class UIControllerEnd : MonoBehaviour
     {
         SceneManager.LoadScene("Start");
     }
-
 }

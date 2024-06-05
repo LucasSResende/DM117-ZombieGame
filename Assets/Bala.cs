@@ -15,7 +15,7 @@ public class Bala : MonoBehaviour
     void FixedUpdate()
     {
         rbBala.MovePosition(
-        rbBala.position + 
+        rbBala.position +
         transform.forward * velocidade * Time.deltaTime);
     }
 
@@ -25,6 +25,7 @@ public class Bala : MonoBehaviour
         if (objetoDeColisao.tag == "Inimigo")
         {
             Destroy(objetoDeColisao.gameObject);
+            ControlaZumbi.contaZumbi--;
         }
 
         Destroy(gameObject);

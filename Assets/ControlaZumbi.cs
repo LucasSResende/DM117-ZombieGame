@@ -9,12 +9,12 @@ public class ControlaZumbi : MonoBehaviour
     public float velocidade = 0.8f;
     private Rigidbody rbZumbi;
     private Animator animatorZumbi;
+    public static int contaZumbi = 4;
 
     private void Start()
     {
         rbZumbi = GetComponent<Rigidbody>();
         animatorZumbi = GetComponent<Animator>();
-        int contaZumbi = 4;
     }
 
     private void FixedUpdate()

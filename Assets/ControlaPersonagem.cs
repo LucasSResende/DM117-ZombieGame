@@ -65,4 +65,13 @@ public class ControlaPersonagem : MonoBehaviour
             rbPersonagem.MoveRotation(novaRotacao);
         }
     }
+
+    public void VerificaContagemZumbis()
+    {
+        if (ControlaZumbi.contaZumbi <= 0)
+        {
+            SceneManager.LoadScene("Fase2");
+        }
+    }
+
 }

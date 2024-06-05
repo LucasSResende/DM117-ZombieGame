@@ -599,13 +599,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.52547085, y: 0.0014849169, z: -0.00091710326, w: 0.8508099}
-  m_LocalPosition: {x: -46.4, y: 35.7, z: -80.01}
+  m_LocalRotation: {x: 0.38992712, y: -0.0016072337, z: 0.00068057555, w: 0.92084414}
+  m_LocalPosition: {x: -25.4, y: 17.7, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 63.4, y: 0.2, z: 0}
+  m_LocalEulerAnglesHint: {x: 45.9, y: -0.2, z: 0}
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -618,7 +618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be0afbc84fe3af84fb1c0ccde2f4ed86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jogador: {fileID: 0}
+  jogador: {fileID: 2052002101}
 --- !u!850595691 &1668231165
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -937,11 +937,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4357e9e97d00e0e4bb57cf79f84dd6f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidade: 12
   mascaraChao:
     serializedVersion: 2
     m_Bits: 0
-  textoGameOver: {fileID: 0}
   vivo: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

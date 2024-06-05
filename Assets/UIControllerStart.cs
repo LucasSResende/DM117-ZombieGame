@@ -11,5 +11,4 @@ public class UIControllerStart : MonoBehaviour
     {
         SceneManager.LoadScene("Fase1");
     }
-
 }
