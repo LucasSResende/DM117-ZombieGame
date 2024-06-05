@@ -1,11 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ControlaZumbi : MonoBehaviour
 {
     public GameObject jogador;
-    public float velocidade;
+    public float velocidade = 0.8f;
+    private Rigidbody rbZumbi;
+    private Animator animatorZumbi;
+
+    private void Start()
+    {
+        rbZumbi = GetComponent<Rigidbody>();
+        animatorZumbi = GetComponent<Animator>();
+        int contaZumbi = 4;
+    }
 
     private void FixedUpdate()
     {
@@ -15,26 +25,25 @@ public class ControlaZumbi : MonoBehaviour
         Vector3 direcao = jogador.transform.position - transform.position;
 
         Quaternion novaRotacao = Quaternion.LookRotation(direcao);
-        GetComponent<Rigidbody>().MoveRotation(novaRotacao);
+        rbZumbi.MoveRotation(novaRotacao);
 
         if (distancia > 2.2)
         {
-            GetComponent<Rigidbody>().MovePosition(
-            GetComponent<Rigidbody>().position +
-            direcao.normalized * velocidade * Time.deltaTime);
+            rbZumbi.MovePosition(
+                rbZumbi.position +
+                direcao.normalized * velocidade * Time.deltaTime);
 
-            GetComponent<Animator>().SetBool("Atacando", false);
+            animatorZumbi.SetBool("Atacando", false);
         }
         else
         {
-            GetComponent<Animator>().SetBool("Atacando", true);
+            animatorZumbi.SetBool("Atacando", true);
         }
 
-        void AtacaPersonagem ()
-        {
-            Time.timeScale = 0;
-            jogador.GetComponent<ControlaPersonagem>().textoGameOver.SetActive(true);
-            jogador.GetComponent<ControlaPersonagem>().vivo = false;
-        }
+    }
+    void AtacaPersonagem()
+    {
+        Time.timeScale = 0;
+        jogador.GetComponent<ControlaPersonagem>().vivo = false;
     }
 }

@@ -229,7 +229,8 @@ ModelImporter:
       - time: 0.518519
         functionName: AtacaPersonagem
         data: 
-        objectReferenceParameter: {instanceID: 0}
+        objectReferenceParameter: {fileID: 9100000, guid: deab85c4427ae8a4990f85d4cb9991c6,
+          type: 2}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0

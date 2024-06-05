@@ -166,7 +166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03c9180c51118d94d8045360f1e71512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startButtonEnd: {fileID: 1835590717}
 --- !u!1 &665395242
 GameObject:
   m_ObjectHideFlags: 0
@@ -609,7 +608,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 534182319}
         m_TargetAssemblyTypeName: UIControllerEnd, Assembly-CSharp
-        m_MethodName: OnClickButton
+        m_MethodName: OnClickButtonStart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -669,7 +668,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03c9180c51118d94d8045360f1e71512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startButtonEnd: {fileID: 1835590717}
 --- !u!1 &1861799650
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,17 +1,19 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
 
 public class ControlaPersonagem : MonoBehaviour
 {
-    [SerializeField] float velocidade;
-    Vector3 direcao;
+    private Rigidbody rbPersonagem;
+    private Animator animatorPersonagem;
+    private float velocidade = 12;
+    private Vector3 direcao;
     public LayerMask mascaraChao;
-    public GameObject textoGameOver;
     public bool vivo = true;
 
     private void Start()
     {
+        rbPersonagem = GetComponent<Rigidbody>();
+        animatorPersonagem = GetComponent<Animator>();
         Time.timeScale = 1;
     }
 
@@ -26,28 +28,25 @@ public class ControlaPersonagem : MonoBehaviour
 
         if (direcao != Vector3.zero)
         {
-            GetComponent<Animator>().SetBool("Andando", true);
+            animatorPersonagem.SetBool("Andando", true);
         }
         else
         {
-            GetComponent<Animator>().SetBool("Andando", false);
+            animatorPersonagem.SetBool("Andando", false);
 
         }
 
         if (vivo == false)
         {
-            if(Input.GetButtonDown("Fire1"))
-            {
-                SceneManager.LoadScene("Fase1");
-            }
+            SceneManager.LoadScene("GameOver");
         }
 
     }
 
     private void FixedUpdate()
     {
-        GetComponent<Rigidbody>().MovePosition
-            (GetComponent<Rigidbody>().position +
+        rbPersonagem.MovePosition
+            (rbPersonagem.position +
             (direcao * velocidade * Time.deltaTime));
 
         Ray raio = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -63,7 +62,7 @@ public class ControlaPersonagem : MonoBehaviour
 
             Quaternion novaRotacao = Quaternion.LookRotation(posicaoMiraPersonagem);
 
-            GetComponent<Rigidbody>().MoveRotation(novaRotacao);
+            rbPersonagem.MoveRotation(novaRotacao);
         }
     }
 }
