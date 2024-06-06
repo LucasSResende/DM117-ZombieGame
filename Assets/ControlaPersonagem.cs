@@ -49,6 +49,7 @@ public class ControlaPersonagem : MonoBehaviour
             (rbPersonagem.position +
             (direcao * velocidade * Time.deltaTime));
 
+        Vector3 miraPersonagem = Vector3.forward;
         Ray raio = Camera.main.ScreenPointToRay(Input.mousePosition);
         Debug.DrawRay(raio.origin, raio.direction * 100, Color.red);
 
@@ -56,22 +57,25 @@ public class ControlaPersonagem : MonoBehaviour
 
         if (Physics.Raycast(raio, out impacto, 100))
         {
-            Vector3 posicaoMiraPersonagem = impacto.point - transform.position;
-
-            posicaoMiraPersonagem.y = transform.position.y;
-
-            Quaternion novaRotacao = Quaternion.LookRotation(posicaoMiraPersonagem);
-
-            rbPersonagem.MoveRotation(novaRotacao);
+            miraPersonagem = impacto.point;
         }
+        transform.LookAt(new Vector3(miraPersonagem.x, transform.position.y, miraPersonagem.z));
     }
 
     public void VerificaContagemZumbis()
     {
+
         if (ControlaZumbi.contaZumbi <= 0)
         {
-            SceneManager.LoadScene("Fase2");
+            if (SceneManager.GetActiveScene().name == "Fase1")
+            {
+                SceneManager.LoadScene("Fase2");
+                ControlaZumbi.contaZumbi = 5;
+            }
+            else if (SceneManager.GetActiveScene().name == "Fase2")
+            {
+                SceneManager.LoadScene("Finish");
+            }
         }
     }
-
 }

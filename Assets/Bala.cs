@@ -5,18 +5,10 @@ using UnityEngine;
 public class Bala : MonoBehaviour
 {
     public float velocidade;
-    private Rigidbody rbBala;
-
-    private void Start()
-    {
-        rbBala = GetComponent<Rigidbody>();
-    }
 
     void FixedUpdate()
     {
-        rbBala.MovePosition(
-        rbBala.position +
-        transform.forward * velocidade * Time.deltaTime);
+        transform.position += transform.forward * velocidade * Time.deltaTime;
     }
 
 
@@ -26,6 +18,11 @@ public class Bala : MonoBehaviour
         {
             Destroy(objetoDeColisao.gameObject);
             ControlaZumbi.contaZumbi--;
+
+            if (!gameObject.GetComponent<BoxCollider>())
+            {
+                gameObject.AddComponent<BoxCollider>();
+            }
         }
 
         Destroy(gameObject);
